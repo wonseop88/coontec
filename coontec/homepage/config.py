@@ -7,6 +7,6 @@ DATABASE = {
 
 EMAIL = {
     'id':'wonseop',
-    'password':'dnjstjq0305',
+    'password':'gkskql1149',
     }
 
