@@ -12,7 +12,7 @@ from homepage.config import EMAIL
 
 def send_email(request):
     
-    send_email = 'bluehanabi88@gmail.com'
+    send_email = EMAIL['id']+'@coontec.com'
 
     server = smtplib.SMTP('smtp.gmail.com:587')
     server.starttls()
@@ -38,4 +38,3 @@ def send_email(request):
 
     server.quit()
     
-    return True
