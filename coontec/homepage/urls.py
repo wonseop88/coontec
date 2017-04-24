@@ -6,6 +6,7 @@ Created on 2017. 3. 20.
 
 from django.conf.urls import include, url
 from . import views
+from . import emailSend
 
 
 urlpatterns = [
@@ -17,5 +18,6 @@ urlpatterns = [
     url(r'^company/(?P<page_url>\w+)/$', views.page, name='company'),
     url(r'^resource/(?P<page_url>\w+)/$', views.page, name='resource'),
     url(r'^service/(?P<page_url>\w+)/$', views.page, name='service'),
+    url(r'^emailsend/$', emailSend.send_email, name='email'),
 
 ]

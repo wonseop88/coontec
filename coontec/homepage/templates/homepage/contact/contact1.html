@@ -9,6 +9,7 @@
 			<div id="sendmessage">Your message has been sent. Thank you!</div>
 			<div id="errormessage"></div>
 			<form action="" method="post" role="form" class="contactForm">
+			{% csrf_token %}  
 				<div class="form-group">
 					<input type="text" name="name" class="form-control" id="name"
 						placeholder="Your Name" data-rule="minlen:4"
@@ -28,16 +29,36 @@
 					<div class="validation"></div>
 				</div>
 				<div class="form-group">
-					<textarea class="form-control" name="message" rows="5"
+					<textarea class="form-control" name="message" rows="5" id="message"
 						data-rule="required" data-msg="Please write something for us"
 						placeholder="Message"></textarea>
 					<div class="validation"></div>
 				</div>
 
 				<div class="text-center">
-					<button type="submit" class="btn btn-theme">Send Message</button>
+					<button type="submit" class="btn btn-theme" onclick="emailSend()">Send Message</button>
 				</div>
 			</form>
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+function emailSend(){
+	var email = $("#email").val();
+	var subject = $("#subject").val();
+	var name = $("#name").val();
+	var message = $("#message").val();
+	
+	$.ajax({
+        type: "GET",
+        url: "/emailsend/",
+        data : {"email":email,"subject":subject,"name":name,"message":message},
+        dataType: "json",
+        success : function(jsonData) {
+        		console.log("정상적으로 처리 되었습니다.")
+            }
+	});
+}
+
+</script>
