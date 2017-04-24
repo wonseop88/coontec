@@ -26,8 +26,8 @@ class homeList:
             print('error | msg = "db cur close failed"')
             
     def getAllList(self):
-        s_query = ' SELECT SEQ, CATEGORY, PAGE_URL, FILENAME, NAME, ENABLED '
-        s_query += 'from HOMEPAGE.PAGEINFO'
+        s_query = 'SELECT SEQ, CATEGORY, PAGE_URL, FILENAME, NAME, ENABLED '
+        s_query += 'from pageinfo'
         try:
             self.dbopen()
             self.curs.execute(s_query)
@@ -42,7 +42,7 @@ class homeList:
     def getList(self,pageurl):
 
         s_query = 'SELECT SEQ, CATEGORY, PAGE_URL, FILENAME, NAME, ENABLED '
-        s_query += 'from HOMEPAGE.PAGEINFO where page_url="'+pageurl+'"'
+        s_query += 'from pageinfo where page_url="'+pageurl+'"'
         try:
             self.dbopen()
             self.curs.execute(s_query)
@@ -56,7 +56,7 @@ class homeList:
     
     def getGroupList(self,category):
         s_query = 'SELECT SEQ, CATEGORY, PAGE_URL, FILENAME, NAME, ENABLED '
-        s_query += 'from HOMEPAGE.PAGEINFO where CATEGORY="'+category+'"'
+        s_query += 'from pageinfo where CATEGORY="'+category+'"'
       
         try:
             self.dbopen()
