@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<div class="aside">
+	<div class="s_map">
+		<h2>{{g_name}}</h2>
+		<ul>
+			<li>{{group}}</li>
+		</ul>
+	</div>
+	<div class="section s-menu">
+		<ul>
+			{% for list in all_list %}
+				{% if list.CATEGORY == group %} 
+					{% with seq=list.SEQ|stringformat:"s"%}
+					<li class="{%if num == seq %}active{%endif%}"><a href="{% url 'page' seq %}">{{list.NAME}}</a></li>
+					{% endwith %}
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+</div>

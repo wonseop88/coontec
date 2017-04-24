@@ -1,0 +1,20 @@
+{% include "homepage/inc/top.html" with all_list=all_list %}
+{% load staticfiles %}
+	{% if group == 'main' %}
+		{% include "homepage/inc/main.html" with all_list=all_list%}
+	{% elif group == 'solution' %}
+		{% include "homepage/solution/s_body.html" with url=url name=name %}
+	{% elif group == 'product' %}
+		{% include "homepage/product/p_body.html" with url=url name=name %}
+	{% elif group == 'service' %}
+		{% include "homepage/service/s_body.html" with url=url name=name %}
+	{% elif group == 'resource' %}
+		{% include "homepage/resource/r_body.html" with url=url name=name %}
+	{% elif group == 'company' %}
+		{% include "homepage/company/c_body.html" with url=url name=name %}
+	{% elif group == 'contact' %}
+		{% include "homepage/contact/c_body.html" with url=url name=name %}
+	{% else %}
+		{% include "homepage/inc/main.html" %}
+	{% endif %}
+{% include "homepage/inc/bottom.html" %}

@@ -1,0 +1,85 @@
+{% load staticfiles %} 
+
+{% block content %}
+<section id="courses" class="section-padding">
+	<div class="container">
+		<div class="row">
+			<div class="header-section text-center">
+				<h2>Movie</h2>
+				<p>동영상 SAMPLE입니다.</p>
+				<hr class="bottom-line">
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-6 padleft-right p_movie">
+				<figure class="imghvr-fold-up">
+					<iframe width="315" height="177"
+						src="https://www.youtube.com/embed/8A2t_tAjMz8"></iframe>
+					<figcaption>
+						<h3>트와이스!!!</h3>
+						<p>KNOCK KNOCK</p>
+					</figcaption>
+					<a class="movie"  href="#:none" onClick="popupOpen();"
+						value="https://www.youtube.com/embed/8A2t_tAjMz8?autoplay=1"></a>
+				</figure>
+			</div>
+			<div class="col-md-4 col-sm-6 padleft-right p_movie">
+				<figure class="imghvr-fold-up">
+					<iframe width="315" height="177"
+						src="https://www.youtube.com/embed/i1n_1jrUEjU"></iframe>
+					<figcaption>
+						<h3>Course Name</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+							Magnam atque, nostrum veniam consequatur libero fugiat, similique
+							quis.</p>
+					</figcaption>
+					<a class="movie"  href="#:none" onClick="popupOpen();"
+						value="https://www.youtube.com/embed/i1n_1jrUEjU?autoplay=1"></a>
+				</figure>
+			</div>
+			<div class="col-md-4 col-sm-6 padleft-right p_movie">
+				<figure class="imghvr-fold-up">
+					<iframe width="315" height="177"
+						src="https://www.youtube.com/embed/XGdbaEDVWp0"></iframe>
+					<figcaption>
+						<h3>Course Name</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+							Magnam atque, nostrum veniam consequatur libero fugiat, similique
+							quis.</p>
+					</figcaption>
+					<a class="movie" href="#:none" onClick="popupOpen();"
+						value="https://www.youtube.com/embed/XGdbaEDVWp0?autoplay=1"></a>
+				</figure>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock content %}
+
+
+
+<script type="text/javascript">
+	function popupOpen() {
+		$(function() {
+			$('.movie').click(
+					function() {
+						var url = $(this).attr('href')
+
+						var winWidth = 560;
+						var winHeight = 315;
+						var winPosLeft = (screen.width - winWidth) / 2;
+						var winPosTop = (screen.height - winHeight) / 2;
+						var popUrl = $(this).attr('value')
+						console.log(url)
+						var popOption = "width=" + winWidth + ",height="
+								+ winHeight + ",top=" + winPosTop + ",left="
+								+ winPosLeft
+								+ " , resizable=no, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
+						window.open(popUrl, "", popOption);
+
+					})
+		})
+	}
+</script>

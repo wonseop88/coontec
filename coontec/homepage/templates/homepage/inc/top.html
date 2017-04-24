@@ -1,0 +1,110 @@
+{% load staticfiles %}
+<title>쿤텍(주)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link href="{% static '/css/coontec.css' %}" rel="stylesheet" />
+<link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet" />
+<link href="{% static '/css/jcarousel.css' %}" rel="stylesheet" />
+<link href="{% static '/css/flexslider.css' %}" rel="stylesheet" />
+<link href="{% static '/css/style.css' %}" rel="stylesheet" />
+
+<!-- Theme skin -->
+<!-- ##################################################### -->
+<link rel="stylesheet" href="{% static '/css/style_wrap.css' %}"
+	rel="stylesheet">
+
+<script src="{% static '/js/jquery.js' %}"></script>
+<script src="{% static '/js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static '/js/bootstrap.min.js' %}"></script>
+<script src="{% static '/js/jquery.fancybox.pack.js' %}"></script>
+<script src="{% static '/js/jquery.fancybox-media.js' %}"></script>
+<script src="{% static '/js/google-code-prettify/prettify.js' %}"></script>
+<script src="{% static '/js/jquery.flexslider.js' %}"></script>
+<script src="{% static '/js/custom.js' %}"></script>
+
+<script>
+$(document).ready(function(){
+	$(".nav li").hover(function(){
+		$(this).addClass('open');
+	}, function(){
+	    $(this).removeClass('open');
+	});
+	
+
+});
+
+
+</script>
+<style>
+.nav > li.dropdown:hover {
+	display:block;
+}
+</style>
+
+{% block content %}
+<div id="wrapper">
+	<header>
+		<div class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-collapse">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/"> <img
+						src="{% static '/img/main/logo2.gif' %}" width="160px"
+						height="64px" alt="(주)CoonTec" /></a>
+				</div>
+				<div class="navbar-collapse collapse ">
+					<ul class="nav navbar-nav">
+						<li class="dropdown"><a href="{% url 'solution' 'solution'%}">Solution</a>
+							<ul class="dropdown-menu">
+								{% for list in all_list %} 
+									{% if list.CATEGORY == 'solution' and list.ENABLED == 'YES' %} 
+										<li><a href="{% url 'solution' list.PAGE_URL%}">{{list.NAME}}</a></li> 
+									{% endif %} 
+								{% endfor %}
+							</ul></li>
+						<li class="dropdown"><a href="{% url 'product' 'product'%}">Product</a>
+							<ul class="dropdown-menu">
+								{% for list in all_list %} 
+									{% if list.CATEGORY == 'product' and list.ENABLED == 'YES' %} 
+										<li><a href="{% url 'product' list.PAGE_URL %}">{{list.NAME}}</a></li> 
+									{% endif %} 
+								{% endfor %}
+							</ul></li>
+						<li class="dropdown"><a href="{% url 'service' 'service'%}">Service</a>
+							<ul class="dropdown-menu">
+								{% for list in all_list %} 
+									{% if list.CATEGORY == 'service' and list.ENABLED == 'YES' %} 
+										<li><a href="{% url 'service' list.PAGE_URL%}">{{list.NAME}}</a></li> 
+									{% endif %} 
+								{% endfor %}
+							</ul></li>
+						<li class="dropdown"><a href="{% url 'company' 'company'%}">Company</a>
+							<ul class="dropdown-menu">
+								{% for list in all_list %} 
+									{% if list.CATEGORY == 'company' and list.ENABLED == 'YES' %} 
+										<li><a href="{% url 'company' list.PAGE_URL%}">{{list.NAME}}</a></li> 
+									{% endif %} 
+								{% endfor %}
+							</ul></li>
+						<li class="dropdown"><a href="{% url 'resource' 'resource'%}">Resource</a>
+							<ul class="dropdown-menu">
+								{% for list in all_list %} 
+									{% if list.CATEGORY == 'resource' and list.ENABLED == 'YES' %} 
+										<li><a href="{% url 'resource' list.PAGE_URL%}">{{list.NAME}}</a></li> 
+									{% endif %} 
+								{% endfor %}
+							</ul></li>
+						<li><a href="{% url 'contact' %}">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>
+
+{% endblock content %}
+

@@ -1,0 +1,125 @@
+{% load staticfiles %}
+{% block content %}
+<div id="ctt_con">
+	<h3>개요</h3>
+	<span>Imperas 솔루션은 System Full Virtualization(전가상화) Simulator
+		입니다. 임베디드 시스템의 CPU 뿐 아니라 Peripheral Device, Bus, Memory 등을 모두 가상화하여
+		실제 Target에서 실행 되는 바이너리를 개발 환경에서 그대로 수행할 수 있도록 하며 CPU, 디버깅, 데이터
+		가상입력등을 수행하여 다양한 분야에 활용할 수 있습니다. </span>
+	<p class="mt30">
+		<img class="img_wid" src="{% static '/img/product/01_01.gif' %}" >
+	</p>
+
+	<h3>특징 및 장점</h3>
+	<span>임베디드 시스템 보다 수십~수백만배 이상 빠른 수행 속도 가상시스템을 활용한 다양한 기능 제공
+		(디버깅, 테스팅, 분석, 오류 주입, 커버리지, OS Tracing, Cash정보 등) ARM, MIPS,
+		PowerPC, Synopsys, Renesas, openCores, Altera 등 지원 자체 개발된 CPU Core
+		개발을 위한 Tool 제공 Eclipse, GDB, 디바이스 생성기 등 제공 OVP Projects 를 기반으로한
+		디바이스, CPU Core 지원 생태계 제공 </span>
+	<p class="mt30">
+		<img class="img_wid" src="{% static '/img/product/01_02.gif' %}">
+	</p>
+
+	<h3>주요기능</h3>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>분류</th>
+				<th>VAP주요기능</th>
+				<th>설명</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th rowspan="3" scope="row">Tracing</th>
+				<td>Mark</td>
+				<td>Processor(Event, Register 등) Architecture 내부 데이터 event
+					추적 기능</td>
+			</tr>
+			<tr>
+				<td>Function Tracing</td>
+				<td>Call 추적 및 참조 횟수, 함수 데이터 추적 기능</td>
+			</tr>
+			<tr>
+				<td>OS Task Tracing</td>
+				<td>다양한 RTOS 에 대한 Event, task 추적 기능</td>
+			</tr>
+			<tr>
+				<th rowspan="2" scope="row">Coverage</th>
+				<td>Code Coverage</td>
+				<td>Code 수행 및 조회에 대한 커버리지 데이터 제공</td>
+			</tr>
+			<tr>
+				<td>Instruction Coverage</td>
+				<td>Instruction 단위의 실제 커버리지 데이터 제공</td>
+			</tr>
+			<tr>
+				<th rowspan="4" scope="row">Analysis</th>
+				<td>Memory Analysis</td>
+				<td>메모리 에러 유형 데이터 제공 (Access, Bound, Usage 등)</td>
+			</tr>
+			<tr>
+				<td>Cache Analysis</td>
+				<td>Cache 프로파일 기능 제공 (hit miss, context 등)</td>
+			</tr>
+			<tr>
+				<td>Exception &amp; Interrupt Analysis</td>
+				<td>Runtime error 에 대한 분석 데이터 제공</td>
+			</tr>
+			<tr>
+				<td>OS Scheduler Analysis</td>
+				<td>OS Task 에 대한 Schedule profile 제공</td>
+			</tr>
+			<tr>
+				<th rowspan="3" scope="row">Testing</th>
+				<td>Fault Injection</td>
+				<td>Fault 데이터 자동 생성 주입으로 오류 검출</td>
+			</tr>
+			<tr>
+				<td>Protocol Verification</td>
+				<td>프로토콜 데이터에 대한 검증 환경 지운</td>
+			</tr>
+			<tr>
+				<td>Shared Resource Introspection</td>
+				<td>공유 자원에 대한 테스트 기능 제공 (메모리 등)</td>
+			</tr>
+		</tbody>
+	</table>
+	<img class="img_wid" src="{% static '/img/product/01_03.gif' %}">
+
+	<div class="clear">
+		<h3 class="mt30">제품군 소개</h3>
+			<img class="img_wid" src="{% static '/img/product/01_04.gif' %}">
+
+		<h3 class="mt30">에코 시스템</h3>
+		<div class="row product_h2">
+			<div class="col-xs-6">
+				<h3>목적</h3>
+				<blockquote class="b_text">
+					Imperas가 2008년 설립<br> Non-Commercial 목적으로만 사용 가능<br>
+					OVP를 활용하여 생태계 구축
+				</blockquote>
+				<h3 class="mt10">주요 참여 현황</h3>
+				<blockquote class="b_text">
+					현재 8000명 이상의 전자회사와 교육기관 멤버들이 참여<br> infrastructure를 제공하는
+					industry consortium
+
+				</blockquote>
+
+				<h3 class="mt10">확장성</h3>
+				<blockquote class="b_text">
+					SystemC와 TLM2를 포함한 다른 표준들과 함께 동작<br> OVP에서 개발된 디바이스 및 CPU
+					Model을 공유
+
+
+				</blockquote>
+			</div>
+			<div class="col-xs-6 text-right">
+				<img class="img_wid" src="{% static '/img/product/01_05.gif' %}"> <br>
+				<img class="img_wid" src="{% static '/img/product/01_06.gif' %}">
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
+	

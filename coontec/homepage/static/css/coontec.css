@@ -1,0 +1,165 @@
+/* menu click drop다운시 내려오는 크기 제한 */
+.navbar-collapse {
+	max-height: 500px !important;
+}
+
+.dropdown-menu {
+	top: auto !important;
+}
+
+.navbar-brand {
+	margin-top: -10px !important;
+}
+
+.box-bottom {
+	background-color: #68A4C4;
+}
+
+@media all and (min-width:768px) {
+	/* 화면 크기 수정 시 로고 위치 수정 */
+	.navbar-brand {
+		margin-top: 20px !important;
+	}
+}
+
+/*############### page css */
+
+/* Common & mobile */
+.w-default {
+	width: 95% !important;
+}
+
+#containder-sub .aside {
+	width: 100% !important;
+	margin-left: 10px;
+}
+
+#containder-sub .sub_wrap {
+	width: 95% !important;
+	margin-left: 10px;
+}
+
+.img_wid {
+	width: 100% !important;
+}
+
+.col-xs-7 h2 {
+	margin-left: 10px;
+}
+
+#bottom {
+	width: 95% !important;
+}
+
+/*연혁 페이지 사이즈 수정 작업 시작 */
+dl {
+	margin: 0;
+	display: inline-block;
+}
+
+dt {
+	margin: 0;
+	font-size: 12;
+}
+
+dd {
+	margin: 0;
+	float: left;
+	display: inline;
+}
+
+ul, ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+li {
+	margin: 0;
+}
+
+#years_box .years {
+	width: 15%;
+	font-size: 35px;
+	font-weight: bold;
+	letter-spacing: -2px;
+	color: #68A4C4;
+}
+
+#years_box .text {
+	width: 85%;
+	padding-bottom: 25px;
+	float: inherit;
+}
+
+#years_box .text .text_2 {
+	width: 80%;
+	font-size: 11px;
+	color: #343333;
+	height: auto;
+	padding-top: 13px;
+	word-break: break-all;
+}
+
+#years_box .text .years_2 {
+	width: 20%;
+	font-size: 13px;
+	height: auto;
+	color: #2b81ae;
+	height: 30px;
+	padding-top: 13px;
+}
+
+.line_5 {
+	width: 100%;
+	height: 2px;
+	background-color: #2b81ae;
+}
+
+#years_box {
+	width: 100%;
+}
+
+#years_box dl {
+	width: 100%
+}	
+
+@media all and (min-width:768px) {
+	#years_box .text {
+		float: right;
+	}
+	#years_box .text .years_2 {
+		width: 15%;
+		font-size: 16px;
+	}
+	#years_box .text .text_2 {
+		width: 85%;
+		font-size: 12px;
+	}
+}
+/*연혁 페이지 사이즈 수정 끝 */
+
+/* Table & Desktop */
+@media all and (min-width:768px) {
+	#containder-sub .sub_wrap {
+		width: 70% !important;
+		float: left !important;
+		margin-right: 15px !important;
+	}
+	#containder-sub .aside {
+		width: 20% !important;
+		margin-right: 20px;
+	}
+}
+/* Tablet Device */
+@media all and (min-width:769px) and (max-width:1024px) {
+}
+/* Desktop Device */
+@media all and (min-width:1025px) {
+	.w-default {
+		width: 1025px !important;
+	}
+	#bottom {
+		width: 100% !important;
+	}
+}

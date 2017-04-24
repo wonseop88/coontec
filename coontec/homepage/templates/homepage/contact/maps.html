@@ -1,0 +1,44 @@
+{% load staticfiles %}
+{% block content %}
+<script
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBq8vP-uJTtwudGNDQ5q0qu0h66nOPrvfU&sensor=true"></script>
+<script>
+	function initialize() {
+
+		var mapOptions = {
+			center : new google.maps.LatLng(37.5037500, 127.0448360, 18), //좌표
+			zoom : 16, //확대정도
+			mapTypeId : google.maps.MapTypeId.ROADMAP
+		};
+		var map = new google.maps.Map(document.getElementById("map_canvas"),
+				mapOptions);
+		var size_x = 100;
+		var size_y = 100;
+		
+		var image = new google.maps.MarkerImage("{% static '/img/main/marker.png' %}", 
+				new google.maps.Size(size_x, size_y),'','',new google.maps.Size(size_x, size_y))
+		
+		var myLatLng = new google.maps.LatLng(37.5037500, 127.0448360, 18);
+		var marker = new google.maps.Marker({
+			position : myLatLng,
+			map : map,
+			icon : image,
+			title : '아남타워'
+		});
+		
+		var content = "서울시 강남구 테헤란로 311, <br/>1609호(역삼동, 아남타워빌딩)"
+		
+		var infowindow = new google.maps.InfoWindow( {content : content});
+
+        google.maps.event.addListener(marker, "click", function() {
+            infowindow.open(map,marker);
+        });
+		
+
+	}
+</script>
+
+<body onload="initialize()">
+	<div id="map_canvas" style="width: 100%; height: 320px;"></div>
+</body>
+{% endblock content %}
