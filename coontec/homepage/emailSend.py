@@ -43,5 +43,5 @@ def send_email(request):
         result_data="success"
     except:
         result_data="fail"
-    
+    #
     return HttpResponse(result_data)
