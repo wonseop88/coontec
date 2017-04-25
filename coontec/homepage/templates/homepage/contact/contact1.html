@@ -55,7 +55,7 @@ function emailSend(){
         url: "/emailsend/",
         data : {"email":email,"subject":subject,"name":name,"message":message},
         dataType: "json",
-        success : function() {
+        success : function(data) {
         		alert("정상적으로 처리 되었습니다.")
             }
 	});
