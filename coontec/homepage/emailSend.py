@@ -39,8 +39,8 @@ def send_email(request):
         #                msg=body.as_string())
     
         #server.quit()
-        message="success"
+        json_data={"result":"success"}
     except:
-        message="fail"
-    print(message)
-    return HttpResponse(message)
+        json_data={"result":"fail"}
+    print(json_data)
+    return HttpResponse(json_data, content_type="application/json")
