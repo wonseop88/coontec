@@ -34,13 +34,13 @@ def send_email(request):
         msg = MIMEText(html, 'html')
         body.attach(msg)
     
-        server.sendmail(from_addr=send_email,
-                        to_addrs=[send_email],  # list, str 둘 다 가능
-                        msg=body.as_string())
+        #server.sendmail(from_addr=send_email,
+        #                to_addrs=[send_email],  # list, str 둘 다 가능
+        #                msg=body.as_string())
     
-        server.quit()
+        #server.quit()
         message="success"
     except:
         message="fail"
-        
+    print(message)
     return HttpResponse(message)
