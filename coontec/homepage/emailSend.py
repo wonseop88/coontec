@@ -5,6 +5,7 @@ Created on 2017. 4. 24.
 '''
 # -*- coding: utf-8 -*-
 import smtplib  
+import json
 from email.mime.multipart import MIMEMultipart  
 from email.mime.text import MIMEText
 from django.http import HttpResponse
@@ -34,13 +35,13 @@ def send_email(request):
         msg = MIMEText(html, 'html')
         body.attach(msg)
     
-        #server.sendmail(from_addr=send_email,
-        #                to_addrs=[send_email],  # list, str 둘 다 가능
-        #                msg=body.as_string())
+        server.sendmail(from_addr=send_email,
+                        to_addrs=[send_email],  # list, str 둘 다 가능
+                        msg=body.as_string())
     
-        #server.quit()
-        json_data={"result":"success"}
+        server.quit()
+        result_data="success"
     except:
-        json_data={"result":"fail"}
-    print(json_data)
-    return HttpResponse(json_data, content_type="application/json")
+        result_data="fail"
+    
+    return HttpResponse(result_data)
