@@ -56,10 +56,10 @@ function emailSend(){
         url: "/emailsend/",
         data : {"email":email,"subject":subject,"name":name,"message":message},
         success : function(response) {
-        		alert("정상적으로 문의하기가 완료 되었습니다. ");
+        		alert("정상적으로 문의하기가 완료 되었습니다.");
         },
         error : function(jData) {
-        	alert("문의하기가 실패하였습니다. 잠시후에 다시 시도해주세요. ")
+        	alert("문의하기가 실패하였습니다. 잠시후에 다시 시도해주세요.")
 		}
             
 	});
