@@ -39,10 +39,17 @@ $(document).ready(function(){
 .nav > li.dropdown:hover {
 	display:block;
 }
+.fixed-menu {
+  width: 100%;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
 </style>
 
 {% block content %}
-<div id="wrapper">
+<div id="wrapper" class="">
 	<header>
 		<div class="navbar navbar-default navbar-static-top">
 			<div class="container">
