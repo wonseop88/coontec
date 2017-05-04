@@ -53,6 +53,7 @@ def send_email(request):
 
     server.quit()
     result_data = "success"
+    print(result_data)
     #except:
     #    result_data="fail"
     
