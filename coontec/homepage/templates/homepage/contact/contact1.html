@@ -57,7 +57,10 @@ function emailSend(){
         data : {"email":email,"subject":subject,"name":name,"message":message},
         success : function(response) {
         		alert("메일이 발송 되었습니다.");
-        }
+        },
+        error : function(resopnse) {
+        	alert("메일이 발송 되었습니다.")
+		}
             
 	});
 }
